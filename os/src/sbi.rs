@@ -27,6 +27,11 @@ const SBI_REMOTE_SFENCE_VMA: usize = 6;
 const SBI_REMOTE_SFENCE_VMA_ASID: usize = 7;
 const SBI_SHUTDOWN: usize = 8;
 
+/// 设置下一次时钟中断的时间
+pub fn set_timer(time: usize) {
+    sbi_call(SBI_SET_TIMER, time, 0, 0);
+}
+
 /// 向控制台输出一个字符
 ///
 /// 需要注意我们不能直接使用 Rust 中的 char 类型
