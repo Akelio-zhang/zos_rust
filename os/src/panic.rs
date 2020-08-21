@@ -23,5 +23,5 @@ fn panic_handler(info: &PanicInfo) -> ! {
 /// 调用 [`panic_handler`]
 #[no_mangle]
 extern "C" fn abort() -> ! {
-    panic!("abort()")
+    panic!("abort()");
 }
